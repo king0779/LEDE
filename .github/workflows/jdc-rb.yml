@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: jdcloud_rb OpenWrt
+name: jdcloud_lb OpenWrt
 
 on:
   repository_dispatch:
