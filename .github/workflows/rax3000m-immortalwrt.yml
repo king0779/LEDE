@@ -17,9 +17,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false'
-
-        
+        default: 'false' 
         devices:
         description: 'build devices'
         default: '["rax3000m-nand"]'
