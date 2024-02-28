@@ -17,14 +17,14 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false' 
+        default: 'false'
       devices:
         description: 'build devices'
-        default: '["rax3000m-nand"]'
+        default: '["rax3000m"]'
       clean:
         description: 'clean ccache'
         default: 'false'
-
+        
   schedule:
     - cron: 0 8 * * 3,5
   watch:
@@ -34,7 +34,7 @@ on:
       - main
     paths:
       - '.github/workflows/rax3000m-immortalwrt.yml'
-      - 'rax3000m.config'      
+      - 'rax3000m.config'
 
 env:
   REPO_URL: https://github.com/JiaY-shi/openwrt
@@ -134,6 +134,19 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Load custom configuration
+      run: |
+        [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_P2_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
