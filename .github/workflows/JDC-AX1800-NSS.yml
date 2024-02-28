@@ -54,6 +54,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
+
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -66,13 +67,6 @@ jobs:
         ln -s /mnt/openwrt/feeds /workdir/openwrt/feeds
         # ln -s /mnt/openwrt/staging_dir ./staging_dir
         df -h
-
-    - name: Clone source code
-      working-directory: /workdir
-      run: |
-        df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
       run: |
