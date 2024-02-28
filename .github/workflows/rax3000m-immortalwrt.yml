@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: JDC-AX1800 OpenWrt
+name: rax3000m-immortalwrt
 
 on:
   repository_dispatch:
