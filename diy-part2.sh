@@ -12,7 +12,7 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.20.1/g' package/base-files/files/bin/config_generate
-
+sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${GITHUB_WORKSPACE}/openwrt/package/feeds/packages/ttyd/files/ttyd.config
 mkdir Modem-Support
 pushd Modem-Support
 git clone --depth=1 https://github.com/Siriling/5G-Modem-Support .
