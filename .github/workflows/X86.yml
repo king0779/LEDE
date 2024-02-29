@@ -123,6 +123,9 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+      
+    - name: Install feeds
+      run: cd openwrt && rm -rf ./package/wwan
 
     - name: Load custom configuration
       run: |
