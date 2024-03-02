@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: x86.config
-  DIY_P1_SH: diy-part1.sh
+  DIY_P1_SH: diy-x86.sh
   DIY_P2_SH: diy-x86.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -117,7 +117,10 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-
+    - name: Load package-5Gmodem
+      run: |
+        cd openwrt/package
+        git clone https://github.com/king0779/5Gmodem
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
