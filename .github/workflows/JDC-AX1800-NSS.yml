@@ -120,6 +120,9 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+      
+    - name: Install pl
+      run: cd openwrt/package && git clone https://github.com/xiaorouji/openwrt-passwall
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
