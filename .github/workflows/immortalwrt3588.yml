@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: rax3000m-immortalwrt
+name: 3588-immortalwrt
 
 on:
   repository_dispatch:
