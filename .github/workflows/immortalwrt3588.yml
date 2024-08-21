@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/king0779/immortalwrtt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 3588.config
+  CONFIG_FILE: Imm3588.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-imm.sh
   UPLOAD_BIN_DIR: true
