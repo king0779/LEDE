@@ -21,7 +21,7 @@ on:
 
 
 env:
-  REPO_URL: https://github.com/king0779/immortalwrtt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Imm3588.config
